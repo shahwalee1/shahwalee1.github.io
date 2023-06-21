@@ -5,10 +5,9 @@
     <style>
       .center-container {
         width: 100%;
-        text-align: center;
       }
-      .message-container {
-        display: inline-block;
+      .text-center {
+        text-align: center;
       }
     </style>
   </head>
@@ -17,7 +16,7 @@
     <script src="https://www.paypal.com/sdk/js?client-id=test&components=messages,buttons"></script>
 
     <!-- Set up a container element for the button -->
-    <div id="paypal-button-container" class="center-container"></div>
+    <div class="center-container" id="paypal-button-container"></div>
 
     <script>
       paypal.Buttons({
@@ -53,8 +52,8 @@
       }).render('#paypal-button-container');
     </script>
 
-    <div class="center-container">
-      <div class="message-container"
+    <div class="center-container text-center">
+      <div
         data-pp-message
         data-pp-amount="100.00">
       </div>
