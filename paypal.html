@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&components=messages,buttons">
+  </script>
+  <div id="paypal-button-container"></div>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: '100.00'
+              }
+            }]
+          });
+        }
+  }).render('#paypal-button-container');
+  </script>
+  <div
+    data-pp-message
+    data-pp-amount="100.00">
+  </div>
+</body>
+</html>
