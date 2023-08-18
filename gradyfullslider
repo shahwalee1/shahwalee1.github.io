@@ -1,0 +1,114 @@
+<div class="slider">
+  <div class="slides-container">
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3b9e6fd3f86f0652.png">
+    </div>
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3006e21f86446c25.png">
+    </div>
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3fde520e239d02a0.png">
+    </div>
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3006e23854446c26.png">
+    </div>
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3fde52e3739d029f.png">
+    </div>
+    <!-- Duplicated first slide -->
+    <div class="slide">
+      <img src="https://storage.googleapis.com/msgsndr/T129gY6Cbc712uBha6Ex/media/64dfeafd3b9e6fd3f86f0652.png">
+    </div>
+  </div>
+</div>
+
+
+<style>
+ .slider {
+  position: relative;
+  width: 100%;
+  padding-top: 43%; /* Maintain the desired aspect ratio; adjust as needed */
+  overflow: hidden;
+}
+
+.slide {
+    width: 16.666%; /* since there are now 6 slides */
+    height: 100%;
+    flex: 1;
+    position: relative;
+  }
+
+  .slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000; /* Set this to match the predominant color of your images */
+  z-index: -1;
+}
+
+
+  .slides-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%; /* to accommodate the extra slide */
+  height: 100%;
+  display: flex;
+  animation: slide 18s infinite;
+}
+
+
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #001194, #232742);
+  opacity: 0.5; /* adjust as needed */
+}
+
+
+
+
+@keyframes slide {
+  0%, 15% {
+    transform: translateX(0);
+  }
+
+  20%, 35% {
+    transform: translateX(-16.66%);
+  }
+
+  40%, 55% {
+    transform: translateX(-33.32%);
+  }
+
+  60%, 75% {
+    transform: translateX(-50%);
+  }
+
+  80%, 95% {
+    transform: translateX(-66.64%);
+  }
+
+  100% {
+    transform: translateX(-83.32%);
+  }
+}
+
+  @media (max-width: 768px) {
+    .slider {
+        /* adjust as necessary for smaller screens */
+        height: 50vw;
+    }
+  }
+  .slides-container {
+    animation: slide 12s infinite; /* faster animation speed for smaller screens */
+  }
+</style>
+
+
